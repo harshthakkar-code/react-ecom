@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Form, Button, Row, Col, Carousel } from "react-bootstrap";
+import { Form, Button, Row, Col, Carousel, InputGroup } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import Message from "../components/Message";
 import Loader from "../components/Loader";
@@ -45,7 +45,7 @@ const LoginScreen = ({ location, history }) => {
             />
             <Carousel.Caption>
               <h3>Any time, Any where</h3>
-             
+
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
@@ -57,13 +57,13 @@ const LoginScreen = ({ location, history }) => {
 
             <Carousel.Caption>
               <h3>Grab offers</h3>
-              
+
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
             <img
               className="d-block w-100"
-              width= "100px"
+              width="100px"
               height="50px"
               src={logo}
               alt="Third slide"
@@ -88,6 +88,8 @@ const LoginScreen = ({ location, history }) => {
                 placeholder="Enter email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+                className="col-10"
+
               ></Form.Control>
             </Form.Group>
 
@@ -98,21 +100,28 @@ const LoginScreen = ({ location, history }) => {
                 placeholder="Enter password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
+                className="col-10"
+                style={{display:"inline"}}
               ></Form.Control>
+              {/* <InputGroup.Append>
+                <InputGroup.Text> */}
+                  <i  className="fas fa-eye col-1" />
+                {/* </InputGroup.Text>
+              </InputGroup.Append> */}
             </Form.Group>
 
-            <Button type="submit" variant="success" className="signin-btn" block>
+            <Button type="submit" variant="success" className="signin-btn col-10">
               Sign In
             </Button>
           </Form>
 
           <Row className="py-3">
             <Col>
-            Don’t have an account?{" "}
+              Don’t have an account?{" "}
               <Link
                 to={redirect ? `/register?redirect=${redirect}` : "/register"}
               >
-              <h7 style={{color:"blue"}}>Sign Up Now!</h7>
+                <h7 style={{ color: "blue" }}>Sign Up Now!</h7>
               </Link>
             </Col>
           </Row>

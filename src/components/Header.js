@@ -13,7 +13,7 @@ const Header = () => {
 
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
-
+   console.log (userInfo);
   const logoutHandler = () => {
     dispatch(logout());
   };
@@ -57,17 +57,24 @@ const Header = () => {
                   </NavDropdown.Item>
                 </NavDropdown>
               ) : (
+                <>
                 <LinkContainer to="/login">
                   <Nav.Link>
                     <i className="fas fa-user"></i> Sign In
                   </Nav.Link>
                 </LinkContainer>
-              )}
-              <LinkContainer to="/register">
+                <LinkContainer to="/register">
                 <Nav.Link>
                   <i className="fas fa-users"></i> SignUp
                 </Nav.Link>
               </LinkContainer>
+              </>
+              )}
+              {/* <LinkContainer to="/register">
+                <Nav.Link>
+                  <i className="fas fa-users"></i> SignUp
+                </Nav.Link>
+              </LinkContainer> */}
               <LinkContainer to="/contact">
                 <Nav.Link>
                   <i className="fas fa-address-book"></i> contact

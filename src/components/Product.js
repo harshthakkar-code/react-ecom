@@ -7,8 +7,8 @@ import css from './css/Nav.css'
 const Product = ({ product }) => {
   return (
     <Card className='my-3 p-3 rounded home-card'>
-      <Link to={`/product/${product._id}`}>
-        <Card.Img src={'http://localhost:5000'+product.image} variant='top' />
+      <Link to={`/product/${product._id}`} >
+        <Card.Img src={'http://localhost:5000'+product.image} variant='top'  style={{maxHeight:'275px'}}/>
       </Link>
 
       <Card.Body>

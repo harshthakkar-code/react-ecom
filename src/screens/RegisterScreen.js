@@ -97,6 +97,8 @@ const RegisterScreen = ({ location, history }) => {
                 placeholder="Enter name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
+                className="col-10"
+
               ></Form.Control>
             </Form.Group>
 
@@ -107,6 +109,8 @@ const RegisterScreen = ({ location, history }) => {
                 placeholder="Enter email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+                className="col-10"
+
               ></Form.Control>
             </Form.Group>
 
@@ -117,8 +121,11 @@ const RegisterScreen = ({ location, history }) => {
                 placeholder="Enter password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
+                className="col-10"
+                style={{display:"inline"}}
               ></Form.Control>
-            </Form.Group>
+               <i  className="fas fa-eye col-1" />
+                </Form.Group>
 
             <Form.Group controlId="confirmPassword">
               <Form.Label><i className="fas fa-check-circle"></i> Confirm Password</Form.Label>
@@ -127,10 +134,13 @@ const RegisterScreen = ({ location, history }) => {
                 placeholder="Confirm password"
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
+                className="col-10"
+                style={{display:"inline"}}
               ></Form.Control>
-            </Form.Group>
+                 <i  className="fas fa-eye col-1" />
+               </Form.Group>
 
-            <Button type="submit" variant="success" className="signin-btn" block>
+            <Button type="submit" variant="success" className="signin-btn col-10">
             Sign Up
           </Button>
           </Form>
